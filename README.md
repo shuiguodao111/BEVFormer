@@ -16,3 +16,11 @@ To achieve "100% Zero-Configuration Reproduction" for the team, the environment 
 Mount data and inject environment variables:
 ```bash
 source init_env.sh
+
+2. 运行单 GPU 推断评估：
+Utilizing the pre-trained weights (bevformer_tiny_epoch_24.pth) on the nuScenes-mini dataset:
+code
+Bash
+bash ./tools/dist_test.sh ./projects/configs/bevformer/bevformer_tiny.py ./checkpoints/bevformer_tiny_epoch_24.pth 1
+
+(Note: The /data directory containing the nuScenes dataset is excluded from this repo due to size limits. Please mount it externally prior to execution.)
